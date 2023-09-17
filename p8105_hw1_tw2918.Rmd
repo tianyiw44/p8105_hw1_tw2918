@@ -90,4 +90,17 @@ mean(pull(hw1_df, log_vec))
 mean(pull(hw1_df, cha_vec))
 mean(pull(hw1_df, fac_vec))
 ```
-* Taking the mean for the random sample and logical vector worked and it didn't work for the character vector and factor vector becuase the two vectors are not numeric or logical. 
+* Taking the mean for the random sample and logical vector worked and it didn't work for the character vector and factor vector becuase the two vectors are not numeric or logical.
+
+3. Convert the variable from one type to another.
+
+    (still need to use the pull function to pull variables out of the dataframe)
+    (used eval = FALSE to hide output)
+
+```{r, eval = FALSE}
+as.numeric(pull(hw1_df, log_vec))
+as.numeric(pull(hw1_df, cha_vec))
+as.numeric(pull(hw1_df, fac_vec))
+```
+
+* The logical vector is converted in to number with value 1 and 0. The character vector and factor vector is showing NA for the convert. It explained why taking the mean didn'n work in the last step becuase the character and factor variables cannot be converted to numberic variable. 
