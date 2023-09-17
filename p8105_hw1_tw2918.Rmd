@@ -31,4 +31,8 @@ data("early_january_weather")
     10. `pressure` is the weather pressure measured in millibars.
     11. `visib` is the visiblity in kilometers.
     12. `time_hour` listed year, month, date and time. 
-  
+
+* Size of the dataset
+  * There are 358 observations in this dataset
+  * The number of row of this dataset is `r nrow(early_january_weather)`.
+  * The number of columns of this dataset is `r ncol(early_january_weather)`.
