@@ -36,3 +36,6 @@ data("early_january_weather")
   * There are 358 observations in this dataset
   * The number of row of this dataset is `r nrow(early_january_weather)`.
   * The number of columns of this dataset is `r ncol(early_january_weather)`.
+
+* The mean temperature
+  * The mean temperature is `r mean(early_january_weather$temp)`.
