@@ -5,7 +5,7 @@ date: "2023-09-16"
 ---
 
 # Problem 1
-1. Load the moderndive library, and the early_january_weather dataset:
+## 1. Load the moderndive library, and the early_january_weather dataset:
 
 ```{r}
 library(moderndive)
@@ -15,9 +15,10 @@ library(moderndive)
 data("early_january_weather")
 ```
 
-2. Write a short description of the dataset using inline R code
 
-* Variables in this dataset
+## 2. Write a short description of the dataset using inline R code
+
+* **Variables in this dataset**
   * There are 15 variables in this dataset, which shows the weather in Newark from January 1st to January 15th, 2023. 
     1. `origin` variable shows the location of the data and only have one value `origin = EWR`.
     2. `year` `month` `day` and `hour`variables shows the date and time of the data. The `year` and `month` variables only have one value `year = 2013`, `month = 1`. The `day` and `hour` are categorical variables with value `day = 1-15`,`time = 0-23` .
@@ -32,42 +33,49 @@ data("early_january_weather")
     11. `visib` is the visiblity in kilometers.
     12. `time_hour` listed year, month, date and time. 
 
-* Size of the dataset
+* **Size of the dataset**
   * There are 358 observations in this dataset
   * The number of row of this dataset is `r nrow(early_january_weather)`.
   * The number of columns of this dataset is `r ncol(early_january_weather)`.
 
-* The mean temperature
+* **The mean temperature**
   * The mean temperature is `r mean(early_january_weather$temp)`.
 
-3. Make a scatterplot of temp (y) vs time_hour (x); color points using the humid variable. Describe patterns that are apparent in this plot.
 
-* Make a scatterplot of temp (y) vs time_hour (x)
-  *load `tidyverse` library for the plot. Otherwise, the file won't knit.
+## 3. Make a scatterplot of temp (y) vs time_hour (x); color points using the humid variable. Describe patterns that are apparent in this plot.
+
+* **Make a scatterplot of temp (y) vs time_hour (x)**
+  * load `tidyverse` library for the plot. Otherwise, the file won't knit.
+  
 ```{r}
 library(tidyverse)
 ```
 
-  * Use ggplot()funtion for the scatterplot, list the dataset in the parentheses followed by x and y variable in aes parentheses. Must + geom_point(), otherwise the no dot will appear in th scatterplot. 
+  * **Use ggplot()funtion for the scatterplot, list the dataset in the parentheses followed by x and y variable in aes parentheses. Must + geom_point(), otherwise the no dot will appear in th scatterplot.** 
+  
 ```{r}
 ggplot(early_january_weather, aes(x = time_hour, y = temp)) + geom_point()
 ```
 
-  * color points using the humid variable.
+  * **Color points using the humid variable.**
+  
 ```{r}
 ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid )) + geom_point()
 ```
 
-  * Describe patterns that are apparent in this plot.
+  * **Describe patterns that are apparent in this plot.**
     * The temprature is incresing from January 1st to January 15th. The humidity is also increasing from January 1st to January 15th. There's temperature difference during the day.The temperature will first increase from 12am and then decrese during the day to the night. Generally speaking, it is more humid at night than during the day. 
     
-  * Export your scatterplot to your project directory.
+    
+  * **Export scatterplot to the project directory.**
+  
 ```{r}
 ggsave("hw1_scatterplot_temp_timhour_humid.png")
 ```
 
 # Problem 2
-1. Create a data frame comprised of:
+
+## 1. Create a data frame comprised of:
 * a random sample of size 10 from a standard Normal distribution
 * a logical vector indicating whether elements of the sample are greater than 0
 * a character vector of length 10
@@ -83,16 +91,20 @@ hw1_df=
   )
 ```
 
-2. Pull the variable out of the dataframe and take the mean of each variable. 
+
+## 2. Pull the variable out of the dataframe and take the mean of each variable. 
+
 ```{r}
 mean(pull(hw1_df, num_samp))
 mean(pull(hw1_df, log_vec))
 mean(pull(hw1_df, cha_vec))
 mean(pull(hw1_df, fac_vec))
 ```
+
 * Taking the mean for the random sample and logical vector worked and it didn't work for the character vector and factor vector becuase the two vectors are not numeric or logical.
 
-3. Convert the variable from one type to another.
+
+## 3. Convert the variable from one type to another.
 
     (still need to use the pull function to pull variables out of the dataframe)
     (used eval = FALSE to hide output)
