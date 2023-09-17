@@ -53,6 +53,16 @@ library(tidyverse)
 ggplot(early_january_weather, aes(x = time_hour, y = temp)) + geom_point()
 ```
 
+  * color points using the humid variable.
+```{r}
+ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid )) + geom_point()
+```
+
+  * Describe patterns that are apparent in this plot.
+    * The temprature is incresing from January 1st to January 15th. The humidity is also increasing from January 1st to January 15th. There's temperature difference during the day.The temperature will first increase from 12am and then decrese during the day to the night. Generally speaking, it is more humid at night than during the day. 
+    
+  * Export your scatterplot to your project directory.
+
 
 
   
