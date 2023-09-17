@@ -83,6 +83,11 @@ hw1_df=
   )
 ```
 
-
-
-  
+2. Pull the variable out of the dataframe and take the mean of each variable. 
+```{r}
+mean(pull(hw1_df, num_samp))
+mean(pull(hw1_df, log_vec))
+mean(pull(hw1_df, cha_vec))
+mean(pull(hw1_df, fac_vec))
+```
+* Taking the mean for the random sample and logical vector worked and it didn't work for the character vector and factor vector becuase the two vectors are not numeric or logical. 
